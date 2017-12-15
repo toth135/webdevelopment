@@ -3,13 +3,12 @@ package hu.iit.uni.miskolc.bontozd.service.impl;
 import hu.iit.uni.miskolc.bontozd.dao.UserDAO;
 import hu.iit.uni.miskolc.bontozd.exceptions.UsernameIsOccupiedException;
 import hu.iit.uni.miskolc.bontozd.exceptions.UsernameNotFoundException;
+import hu.iit.uni.miskolc.bontozd.model.Login;
 import hu.iit.uni.miskolc.bontozd.model.User;
-import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
-@Service
-public abstract class UserServiceImpl implements hu.iit.uni.miskolc.bontozd.service.UserService {
+public class UserServiceImpl implements hu.iit.uni.miskolc.bontozd.service.UserService {
 
     public UserDAO dao;
 
@@ -33,6 +32,16 @@ public abstract class UserServiceImpl implements hu.iit.uni.miskolc.bontozd.serv
 
     public User getUserByUsername(String username) throws UsernameNotFoundException{
         return dao.readUserByUsername(username);
+    }
+
+    @Override
+    public User validateUser(Login login) {
+        return null;
+    }
+
+    @Override
+    public void register(User user) {
+
     }
 
 }

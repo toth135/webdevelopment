@@ -4,9 +4,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation=" http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-3.0.xsd"
-       xmlns:mvc="http://www.springframework.org/schema/c">
+       xmlns:mvc="http://www.springframework.org/schema/mvc">
 
-    <context:component-scan base-package="hu.iit.uni.miskolc.bontozd.controller" />
+    <context:component-scan base-package="hu.iit.uni.miskolc.bontozd" />
     <context:annotation-config />
     <mvc:annotation-driven></mvc:annotation-driven>
 
@@ -18,6 +18,7 @@
     </bean>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
